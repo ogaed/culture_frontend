@@ -58,18 +58,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute drop-shadow-lg text-base left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-white duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+      className={`absolute drop-shadow-lg text-base left-0 top-0 z-9999 flex h-screen w-50 flex-col overflow-y-hidden bg-green duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+      <div className="flex items-center justify-between gap-2 py-5.5 lg:py-3">
         <NavLink 
                to="/"
-               className='group relative flex text-xl items-center gap-2.5 font-bold   py-2 px-4 font-lg text-green duration-300 ease-in-out'     
+               className='group relative flex text-xl items-center gap-2.5 font-bold   py-2 px-4 text-white duration-300 ease-in-out'     
         >
-          <img width="60" src={Logo} alt="Logo" />
-          Orchard Farm
+          <img width="50" src={Logo} alt="Logo" />
+          Orchard
         </NavLink>
 
         <button
@@ -97,17 +97,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <nav className="mt-3 py-4 px-4 lg:mt-1 lg:px-6 text-base">
           {/* <!-- Menu Group --> */}
           <div>
-          <h3 className="mb-4 ml-4 text-sm text-green font-semibold text-bodydark2">
+          <h3 className="mb-4 ml-4 text-sm text-white font-semibold text-bodydark2">
               MENU
             </h3>
             <ul className="mb-6 flex flex-col gap-1.5">
+              
               {/* <!-- Menu Item Dashboard --> */}
+              <li>
                       <NavLink
                         to="/"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                           (pathname === '/' ||
                             pathname.includes('dashboard')) &&
-                          'bg-graydark dark:bg-meta-4'
+                          'bg-white2 white2:bg-meta-4'
                         }`}
                       >
                        <svg
@@ -137,14 +139,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                         Dashboard
                       </NavLink>
+              </li>
               {/* <!-- Menu Item Dashboard --> */}
 
               {/* <!-- Menu Item product-List --> */}
+              <li>
               <NavLink
                         to="/product"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                             pathname.includes('product') &&
-                          'bg-graydark dark:bg-meta-4'
+                          'bg-white2 white2:bg-meta-4'
                         }`}
                       >
                        <svg 
@@ -163,14 +167,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       </svg>
                         Products
                       </NavLink>
+              </li>
               {/* <!-- Menu Item product-List --> */}
 
               {/* <!-- Menu Item add-product --> */}
+               <li>
                       <NavLink
-                        to="/add-product"
-                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                        to="/add-products"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                             pathname.includes('add-product') &&
-                          'bg-graydark dark:bg-meta-4'
+                          'bg-white2 white2:bg-meta-4'
                         }`}
                       >
                      <svg 
@@ -184,14 +190,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     </svg>
                         Add Product
                       </NavLink>
+              </li>
               {/* <!-- Menu Item add-product --> */}
 
               {/* <!-- Menu Item users --> */}
               <li>
                 <NavLink
                   to="/users"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('users') && 'bg-graydark dark:bg-meta-4'
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
+                    pathname.includes('users') && 'bg-white2 white2:bg-meta-4'
                   }`}
                 >
                   <svg 
@@ -214,8 +221,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/profile"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('profile') && 'bg-graydark dark:bg-meta-4'
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
+                    pathname.includes('profile') && 'bg-white2 white2:bg-meta-4'
                   }`}
                 >
                <svg 
@@ -236,13 +243,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </li>
               {/* <!-- Menu Item Profile --> */}
 
-              {/* <!-- Menu Item edit-profile --> */}
+               {/* <!-- Menu Item edit-profile --> */}
               <li>
                 <NavLink
                   to="/edit-profile"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                     pathname.includes('edit-profile') &&
-                    'bg-graydark dark:bg-meta-4'
+                    'bg-white2 white2:bg-meta-4'
                   }`}
                 >
                  <svg 
@@ -259,14 +266,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                  Edit Profile
                 </NavLink>
               </li>
+              {/* <!-- Menu Item edit-profile --> */}
+            
               {/* <!-- Menu Item Orders--> */}
-
               <li>
                 <NavLink
                   to="/orders"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                     pathname.includes('orders') &&
-                    'bg-graydark dark:bg-meta-4'
+                    'bg-white2 white2:bg-meta-4'
                   }`}
                 >
                   <svg 
@@ -284,13 +292,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Orders--> */}
 
               {/* <!-- Menu Item Payments--> */}
-
               <li>
                 <NavLink
                   to="/payments"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                     pathname.includes('payments') &&
-                    'bg-graydark dark:bg-meta-4'
+                    'bg-white2 white2:bg-meta-4'
                   }`}
                 >
                  <svg 
@@ -310,14 +317,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </li>
               {/* <!-- Menu Item Payments--> */}
 
-              
               {/* <!-- Menu Item Calendar --> */}
               <li>
                 <NavLink
                   to="/calendar"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-green duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                     pathname.includes('calendar') &&
-                    'bg-graydark dark:bg-meta-4'
+                    'bg-white2 white2:bg-meta-4'
                   }`}
                 >
                   <svg

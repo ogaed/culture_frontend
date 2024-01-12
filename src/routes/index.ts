@@ -27,15 +27,15 @@ const coreRoutes = [
   },
 
   {
-    path: 'add-product',
-    title: 'Add Product',
-    component: AddProducts,
-  },
-
-  {
     path: '/product',
     title: 'Product',
     component: Product,
+  },
+
+  {
+    path: 'add-products',
+    title: 'Add Product',
+    component: AddProducts,
   },
 
   {
