@@ -16,7 +16,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const sidebar = useRef<any>(null);
 
   const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
-  const [sidebarExpanded, setSidebarExpanded] = useState(
+  const [sidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
   );
 
@@ -79,19 +79,15 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
           aria-expanded={sidebarOpen}
           className="block lg:hidden"
         >
-          <svg
-            className="fill-current"
-            width="20"
-            height="18"
-            viewBox="0 0 20 18"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M19 8.175H2.98748L9.36248 1.6875C9.69998 1.35 9.69998 0.825 9.36248 0.4875C9.02498 0.15 8.49998 0.15 8.16248 0.4875L0.399976 8.3625C0.0624756 8.7 0.0624756 9.225 0.399976 9.5625L8.16248 17.4375C8.31248 17.5875 8.53748 17.7 8.76248 17.7C8.98748 17.7 9.17498 17.625 9.36248 17.475C9.69998 17.1375 9.69998 16.6125 9.36248 16.275L3.02498 9.8625H19C19.45 9.8625 19.825 9.4875 19.825 9.0375C19.825 8.55 19.45 8.175 19 8.175Z"
-              fill=""
-            />
-          </svg>
+       <svg 
+       className='fill-current'
+       width="18" 
+       height="18" 
+       viewBox="0 0 18 18" 
+       fill="none" 
+       xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.41475 3.21025C2.19508 2.99058 2.19508 2.63442 2.41475 2.41475C2.63442 2.19508 2.99058 2.19508 3.21025 2.41475L9 8.20451L14.7898 2.41475C15.0094 2.19508 15.3656 2.19508 15.5852 2.41475C15.8049 2.63442 15.8049 2.99058 15.5852 3.21025L9.7955 9L15.5852 14.7898C15.8049 15.0094 15.8049 15.3656 15.5852 15.5852C15.3656 15.8049 15.0094 15.8049 14.7898 15.5852L9 9.7955L3.21025 15.5852C2.99058 15.8049 2.63442 15.8049 2.41475 15.5852C2.19508 15.3656 2.19508 15.0094 2.41475 14.7898L8.20451 9L2.41475 3.21025Z" fill=""/>
+      </svg>
         </button>
       </div>
       {/* <!-- SIDEBAR HEADER --> */}
