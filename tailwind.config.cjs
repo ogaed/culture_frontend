@@ -175,6 +175,7 @@ module.exports = {
         132.5: '33.125rem',
         142.5: '35.625rem',
         150: '37.5rem',
+        160:'40rem',
         180: '45rem',
         203: '50.75rem',
         230: '57.5rem',
@@ -210,6 +211,7 @@ module.exports = {
       },
       backgroundImage: {
         video: "url('../images/video/video.png')",
+        'authbg' : 'url("../images/landing/how-is-works-bg.png")'
       },
       content: {
         'icon-copy': 'url("../images/icon/icon-copy-alt.svg")',
@@ -251,6 +253,7 @@ module.exports = {
         'spin-2': 'spin 2s linear infinite',
         'spin-3': 'spin 3s linear infinite',
       },
+      
     },
   },
   plugins: [],
