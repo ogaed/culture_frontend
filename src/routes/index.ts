@@ -12,13 +12,13 @@ const Login = lazy(()=>import('../pages/Authentication/SignIn'))
 
 
 
+
 const coreRoutes = [
   {
     path: 'auth/signin',
     title: 'Login',
     component: Login,
   },
-
   {
     path: '/dashboard',
     title: 'Dashboard',

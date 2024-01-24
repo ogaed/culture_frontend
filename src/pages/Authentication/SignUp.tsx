@@ -1,10 +1,54 @@
 import { Link } from 'react-router-dom';
 import Logo from '../../images/logo/logo_green.png';
+import { useState } from 'react';
+import { API_URL } from '../../constants.d';
 
 const SignUp = () => {
+   const [email, setEmail]  = useState('')
+   const [first_name, setFirstname] = useState('')
+   const [last_name, setLastname] = useState('')
+   const [password, setPassword] = useState('')
+   const [national_id, setNationalId] = useState('')
+   const [phone_number, setNumber] = useState('')
+   const storedLocation = JSON.parse(localStorage.getItem('Location'))
+   const storedType= JSON.parse(localStorage.getItem('Type'))
+  
+   const createUser =async (e) => {
+    e.preventDefault()
+    
+    const userData = {
+      email,
+      password,
+      first_name,
+      last_name,
+      national_id,
+      phone_number,
+      role:storedType,
+      location: storedLocation
+
+    }
+
+try {
+  const response = await fetch(`${API_URL}/users/sign_up`,{
+    method: "POST",
+    headers: {'Content-Type' : 'application/json'},
+    body: JSON.stringify(userData)
+  })
+  if (response.ok) {
+    alert('SuccessRegistered Successfully!!')
+  }else{
+    console.error('user already exist')
+  }
+} catch (error) {
+  console.error('Registration error:', error);
+  alert('ErrorAn error occurred during registration.');
+}
+       
+   }
+
   return (
     <>
-      <div className="rounded-sm absolute bg-no-repeat bg-[url('images/landing/how-is-works-bg.png')] border shadow-xl top-2 left-25 right-25  border-stroke">
+      <div className="rounded-sm absolute bg-no-repeat bg-cover bg-[url('images/landing/how-is-works-bg.png')] border shadow-xl top-2 left-25 right-25  border-stroke">
       <div className="flex flex-wrap items-center">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
@@ -14,7 +58,7 @@ const SignUp = () => {
               <Link className="mb-5.5 inline-block" to="/">
                 <img className="" src={Logo} alt="Logo" />
               </Link>
-
+                <h1></h1>
               <p className="2xl:px-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
                 suspendisse.
@@ -31,19 +75,57 @@ const SignUp = () => {
               </h2>
 
 
-              <form>
-                <div className="">
+              <form onSubmit={createUser}>
+                <div className="mb-4">
                   <label className="mb-2 block font-medium text-black dark:text-white">
-                    Name
+                    First Name
                   </label>
                   <div className="relative">
                     <input
                       type="text"
+                      value={first_name}
+                      onChange={(e)=>setFirstname(e.target.value)}
                       placeholder="Enter your full name"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-2 pl-3 pr-15 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
                     />
 
-                    <span className="absolute right-4 top-4">
+                    <span className="absolute right-2 top-2">
+                      <svg
+                        className="fill-current"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g opacity="0.5">
+                          <path
+                            d="M11.0008 9.52185C13.5445 9.52185 15.607 7.5281 15.607 5.0531C15.607 2.5781 13.5445 0.584351 11.0008 0.584351C8.45703 0.584351 6.39453 2.5781 6.39453 5.0531C6.39453 7.5281 8.45703 9.52185 11.0008 9.52185ZM11.0008 2.1656C12.6852 2.1656 14.0602 3.47185 14.0602 5.08748C14.0602 6.7031 12.6852 8.00935 11.0008 8.00935C9.31641 8.00935 7.94141 6.7031 7.94141 5.08748C7.94141 3.47185 9.31641 2.1656 11.0008 2.1656Z"
+                            fill=""
+                          />
+                          <path
+                            d="M13.2352 11.0687H8.76641C5.08828 11.0687 2.09766 14.0937 2.09766 17.7719V20.625C2.09766 21.0375 2.44141 21.4156 2.88828 21.4156C3.33516 21.4156 3.67891 21.0719 3.67891 20.625V17.7719C3.67891 14.9531 5.98203 12.6156 8.83516 12.6156H13.2695C16.0883 12.6156 18.4258 14.9187 18.4258 17.7719V20.625C18.4258 21.0375 18.7695 21.4156 19.2164 21.4156C19.6633 21.4156 20.007 21.0719 20.007 20.625V17.7719C19.9039 14.0937 16.9133 11.0687 13.2352 11.0687Z"
+                            fill=""
+                          />
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <label className="mb-2 block font-medium text-black dark:text-white">
+                    Last Name
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      value={last_name}
+                      onChange={(e)=>setLastname(e.target.value)}
+                      placeholder="Enter your full name"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-2 pl-3 pr-15 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
+                    />
+
+                    <span className="absolute right-2 top-2">
                       <svg
                         className="fill-current"
                         width="22"
@@ -74,11 +156,13 @@ const SignUp = () => {
                   <div className="relative">
                     <input
                       type="email"
+                      value={email}
+                      onChange={(e)=>setEmail(e.target.value)}
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-2 pl-3 pr-15 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
                     />
 
-                    <span className="absolute right-4 top-4">
+                    <span className="absolute right-2 top-2">
                       <svg
                         className="fill-current"
                         width="22"
@@ -105,11 +189,13 @@ const SignUp = () => {
                   <div className="relative">
                     <input
                       type="password"
+                      value={password}
+                      onChange={(e)=>setPassword(e.target.value)}
                       placeholder="Enter your password"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-2 pl-3 pr-5 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
                     />
 
-                    <span className="absolute right-4 top-4">
+                    <span className="absolute right-2 top-2">
                       <svg
                         className="fill-current"
                         width="22"
@@ -132,21 +218,64 @@ const SignUp = () => {
                     </span>
                   </div>
                 </div>
-
-                <div className="">
-                  <label className="mb-2 block font-medium text-black dark:text-white">
-                    Role
+             
+                <div className="mb-4">
+                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                    National ID
                   </label>
                   <div className="relative">
-                    <select
-                      value="Select Role"
-                      placeholder="Re-enter your password"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
-                    >
-                      <option value="Admin">Admin</option>
-                      <option value="Admin">Farmer</option>
-                      <option value="Admin">Client</option>
-                    </select>
+                    <input
+                    value={national_id}
+                    onChange={(e)=>setNationalId(e.target.value)}
+                      type="number"
+                      placeholder="Enter your password"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-2 pl-3 pr-5 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
+                    />
+
+                    <span className="absolute right-1 top-3">
+                    <svg 
+                    className='fill-current'
+                    width="17"
+                     height="17" 
+                     viewBox="0 0 17 17" 
+                     fill="none" xmlns="http://www.w3.org/2000/svg"
+                     >
+                      {/* <g clip-path="url(#clip0_1287_7434)">
+                        <path d="M5.47348 -2.5034e-06C5.47348 -0.391204 5.79061 -0.708336 6.18182 -0.708336H15.5833C16.7569 -0.708336 17.7083 0.24306 17.7083 1.41666V15.5833C17.7083 16.7569 16.7569 17.7083 15.5833 17.7083H1.41666C0.243059 17.7083 -0.708336 16.7569 -0.708336 15.5833V6.18182C-0.708336 5.79061 -0.391204 5.47348 -2.5034e-06 5.47348C0.391199 5.47348 0.708331 5.79061 0.708331 6.18182V15.5833C0.708331 15.9745 1.02546 16.2917 1.41666 16.2917H15.5833C15.9745 16.2917 16.2917 15.9745 16.2917 15.5833V1.41666C16.2917 1.02546 15.9745 0.708331 15.5833 0.708331H6.18182C5.79061 0.708331 5.47348 0.391199 5.47348 -2.5034e-06Z" fill=""/>
+                      </g> */}
+                      <defs>
+                        <clipPath id="clip0_1287_7434">
+                          <rect width="17" height="17" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    </span>
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                    Phone Number
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="number"
+                      value={phone_number}
+                      onChange={(e)=>setNumber(e.target.value)}
+                      placeholder="Enter your number"
+                      className="w-full rounded-lg border border-stroke bg-transparent py-2 pl-3 pr-5 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
+                    />
+
+                    <span className="absolute right-1 top-2">
+                    <svg 
+                    className='fill-current'
+                    width="22" 
+                    height="22" 
+                    viewBox="0 0 22 22" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.02408 1.82667C4.67972 1.38393 4.02524 1.34318 3.62863 1.7398L2.20699 3.16144C1.54221 3.82622 1.29782 4.76803 1.58827 5.59415C2.75464 8.9117 4.66421 12.0267 7.31874 14.6813C9.97327 17.3358 13.0883 19.2454 16.4059 20.4117C17.232 20.7022 18.1738 20.4578 18.8386 19.793L20.2602 18.3714C20.6568 17.9748 20.6161 17.3203 20.1733 16.9759L17.0023 14.5096C16.7761 14.3337 16.4816 14.2715 16.2037 14.341L13.1937 15.0935C12.3761 15.2979 11.5113 15.0583 10.9154 14.4624L7.53757 11.0846C6.94168 10.4887 6.70213 9.62388 6.90652 8.80632L7.65901 5.79635C7.7285 5.51837 7.66634 5.22387 7.49042 4.99769L5.02408 1.82667ZM2.59156 0.702729C3.61197 -0.317678 5.29581 -0.212846 6.18177 0.926247L8.64811 4.09726C9.10071 4.67918 9.26065 5.43687 9.08185 6.15206L8.32936 9.16203C8.24992 9.4798 8.34303 9.81595 8.57464 10.0476L11.9524 13.4254C12.1841 13.657 12.5202 13.7501 12.838 13.6706L15.8479 12.9182C16.5631 12.7394 17.3208 12.8993 17.9027 13.3519L21.0738 15.8182C22.2128 16.7042 22.3177 18.388 21.2973 19.4084L19.8756 20.8301C18.8585 21.8472 17.3372 22.2938 15.9194 21.7954C12.3991 20.5577 9.09478 18.5314 6.28167 15.7183C3.46857 12.9052 1.4423 9.60088 0.204652 6.08059C-0.293813 4.6628 0.152804 3.14149 1.16992 2.12437L2.59156 0.702729Z" fill=""/>
+                   </svg>
+                    </span>
                   </div>
                 </div>
 
@@ -154,7 +283,7 @@ const SignUp = () => {
                   <input
                     type="submit"
                     value="Create account"
-                    className="w-full cursor-pointer rounded-lg border border-green bg-green p-4 text-white transition hover:bg-opacity-90"
+                    className="w-full cursor-pointer rounded-lg border border-green bg-green p-3 text-white transition hover:bg-opacity-90"
                   />
                 </div>
 

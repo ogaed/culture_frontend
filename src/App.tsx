@@ -5,6 +5,8 @@ import { Toaster } from 'react-hot-toast';
 import Index from './pages/Landing/index';
 import SignIn from './pages/Authentication/SignIn';
 import SignUp from './pages/Authentication/SignUp';
+import Location from './pages/Location';
+import SelectUserType from './pages/SelectUserType';
 import Loader from './common/Loader';
 import routes from './routes';
 
@@ -28,7 +30,9 @@ function App() {
       />
       <Routes>
         <Route path="/auth/signin" element={<SignIn />} />
-        <Route path="/auth/signup" element={<SignUp />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/user_type/:log/:lat" element={<SelectUserType />} />
+        <Route path="/auth/signup/:type" element={<SignUp />} />
         <Route index element={<Index/>} />
         <Route element={<DefaultLayout />}>
           {

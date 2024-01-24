@@ -7,11 +7,13 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate()
+  // const [errorMsg, setErrorMsg] = useState('')
+ 
 
 
   const handleLogin = async (e) => {
-
     e.preventDefault()
+
     // Send a POST request to the server for user authentication
     const response = await fetch(`${API_URL }/users/sign_in`, {
       method: "POST",
@@ -47,7 +49,7 @@ const SignIn = () => {
     } else {
       alert("Wrong username or password");
     }
- 
+  
   };
   return (
     <>
@@ -58,9 +60,7 @@ const SignIn = () => {
             <h2 className="mb-9 text-2xl text-center font-bold text-green dark:text-white sm:text-title-xl2">
                 Orchard Farm
               </h2>
-              <Link className="mb-5.5 inline-block" to="/">
                 <img className="" src={Logo} alt="Logo" />
-              </Link>
 
               <p className="2xl:px-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -76,7 +76,7 @@ const SignIn = () => {
                 Login
               </h2>
 
-              <form onSubmit={handleLogin}>
+              <form>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
                     Email
@@ -89,7 +89,7 @@ const SignIn = () => {
                       onChange={(e)=>setEmail(e.target.value)}
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
                     />
-
+                    
                     <span className="absolute right-4 top-4">
                       <svg
                         className="fill-current"
@@ -108,6 +108,7 @@ const SignIn = () => {
                       </svg>
                     </span>
                   </div>
+                  {/* <span className='text-danger'>{errorMsg}</span> */}
                 </div>
 
                 <div className="mb-6">
@@ -145,11 +146,13 @@ const SignIn = () => {
                       </svg>
                     </span>
                   </div>
+                  {/* <span className='text-danger'>{errorMsg}</span> */}
                 </div>
 
                 <div className="mb-5">
                   <input
                     type="submit"
+                    onClick={handleLogin}
                     value="Sign In"
                     className="w-full cursor-pointer rounded-lg border border-green bg-green p-4 text-white transition hover:bg-opacity-90"
                   />
@@ -157,7 +160,7 @@ const SignIn = () => {
                 <div className="mt-6 text-center">
                   <p>
                     Don’t have any account?{' '}
-                    <Link to="/auth/signup" className="text-green">
+                    <Link to="/location" className="text-green">
                       Sign Up
                     </Link>
                   </p>
