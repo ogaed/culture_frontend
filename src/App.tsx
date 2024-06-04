@@ -33,7 +33,7 @@ function App() {
         <Route path="/location" element={<Location />} />
         <Route path="/user_type/:log/:lat" element={<SelectUserType />} />
         <Route path="/auth/signup/:type" element={<SignUp />} />
-        <Route index element={<Index/>} />
+        <Route index element={<SignIn />} /> 
         <Route element={<DefaultLayout />}>
           {
           routes.map((routes, index) => {

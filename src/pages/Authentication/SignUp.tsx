@@ -53,11 +53,11 @@ try {
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
             <h2 className="mb-7 text-2xl text-center font-bold text-green dark:text-white sm:text-title-xl2">
-                Orchard Farm
+                TMS 
               </h2>
-              <Link className="mb-5.5 inline-block" to="/">
+              {/* <Link className="mb-5.5 inline-block" to="/">
                 <img className="" src={Logo} alt="Logo" />
-              </Link>
+              </Link> */}
                 <h1></h1>
               <p className="2xl:px-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit

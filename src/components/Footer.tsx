@@ -56,9 +56,9 @@ const Footer = () => {
              </ul>
          </nav>
          <div className="footer__contact">
-             <h5 className="footer__contact__title">Blog Orchard</h5>
+             <h5 className="footer__contact__title">Blog TMS</h5>
              <span>Write email to us</span>
-             <a href="mailto:info@Orchardfarm.com" className="email">info@Orchardfarm.com</a>
+             <a href="mailto:info@TMS.com" className="email">info@TMS.com</a>
              <a href="#" className="btn btn__signin">
                  <i className="far fa-user"></i> Sign In
              </a>
@@ -66,11 +66,11 @@ const Footer = () => {
      </div>
      <div className="footer__bottom">
          <div className="footer__bottom__content w-105">
-             <div className="footer__logo">
+             {/* <div className="footer__logo">
                  <img src={Logo} alt="Logo" />
-             </div>
+             </div> */}
              <p className="footer_copyright">
-                 © Copyright 2023. Orchard Farm (KEN 0712345678).
+                 © Copyright 2023. TMS  (KEN 0712345678).
              </p>
          </div>
          <img src={MountainImg} alt="Mountain" className="footer_img" />

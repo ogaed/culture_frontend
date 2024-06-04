@@ -7,7 +7,7 @@ const Navbar = () => {
  <div className="header">
     <nav className="header__nav w-120 html body">
         <div className="header__logo">
-        <img src={Logo} alt="Logo" />
+        {/* <img src={Logo} alt="Logo" /> */}
         </div>
         <div className="header__nav__content">
             <div className="nav-close-icon"></div>

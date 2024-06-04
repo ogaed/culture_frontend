@@ -89,11 +89,11 @@ landing_container section {
 }
 
 .menu__link:hover {
-  color: #528508;
+  color:  #00308F;
 }
 
 .menu__link.active {
-  color: #528508;
+  color:  #00308F;
   font-weight: bold;
 }
 
@@ -136,7 +136,7 @@ landing_container section {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #528508;
+  background-color: #00308F;
   transition: all .3s;
   z-index: -1;
 }
@@ -169,7 +169,7 @@ landing_container section {
 }
 
 .hamburger-menu .line {
-  background-color: #528508;
+  background-color: #00308F;
   height: .3rem;
   width: 100%;
   transition: all 0.3s;
@@ -227,10 +227,10 @@ landing_container section {
 }
 
 .btn__hero {
-  border: 1px solid #528508;
+  border: 1px solid #00308F;;
   color: #ffffff;
   font-size: 1.8rem;
-  box-shadow: 1px 10px 30px -10px #528508;
+  box-shadow: 1px 10px 30px -10px #00308F;;
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -249,7 +249,7 @@ landing_container section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #528508;
+  background-color:  #00308F;
   z-index: -2;
 }
 
@@ -266,7 +266,7 @@ landing_container section {
 }
 
 .btn__hero:hover {
-  color: #528508;
+  color:  #00308F;
 }
 
 .btn__hero:hover:before {
@@ -347,7 +347,7 @@ landing_container section {
 }
 
 .opportunity.active {
-  background-color: #528508;
+  background-color:  #00308F;
 }
 
 .opportunity.active .opportunity__title,
@@ -416,7 +416,7 @@ landing_container section {
 }
 
 .invest__item__subtitle {
-  color: #528508;
+  color:  #00308F;
   font-size: 1.4rem;
   font-weight: 400;
   position: relative;
@@ -449,11 +449,11 @@ landing_container section {
 }
 
 .btn__invest {
-  color: #528508;
+  color:  #00308F;
   display: inline-block;
   width: 20rem;
   text-align: center;
-  box-shadow: 1px 10px 30px -10px #528508;
+  box-shadow: 1px 10px 30px -10px  #00308F;
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -483,7 +483,7 @@ landing_container section {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #528508;
+  background-color:  #00308F;
   transition: all .3s;
   z-index: -1;
 }
@@ -500,7 +500,7 @@ landing_container section {
 /*End How Is Works*/
 .how-is-works {
   background: url("./images//landing/how-is-works-bg.png") no-repeat;
-  background-color: #528508;
+  background-color:  #00308F;
   margin: auto;
 }
 
@@ -549,7 +549,7 @@ landing_container section {
 
 .progressbar__step.active {
   background-color: #ffffff;
-  color: #528508;
+  color:  #00308F;
 }
 
 .progressbar__step.active:not(:first-child)::after {
@@ -704,7 +704,7 @@ landing_container section {
 }
 
 .testimonial__name {
-  color: #528508;
+  color:  #00308F;
 }
 
 .testimonial__title {
@@ -732,9 +732,9 @@ landing_container section {
   padding: 1.5rem;
   outline: none;
   border: none;
-  background-color: #528508;
+  background-color:  #00308F;
   color: #ffffff;
-  box-shadow: 1px 10px 30px -10px #528508;
+  box-shadow: 1px 10px 30px -10px  #00308F;
 }
 
 .btn__testimonials.disable {
@@ -743,8 +743,8 @@ landing_container section {
 }
 
 /*End Testimonials*/
-/*Farm Invest */
-.farm-invest {
+/* Invest */
+.-invest {
   margin: auto;
   padding: 5rem 2.5rem;
   text-align: center;
@@ -753,21 +753,21 @@ landing_container section {
   margin-bottom: 10rem;
 }
 
-.farm-invest__title {
+.-invest__title {
   font-size: 3.6rem;
 }
 
-.farm-invest__title span {
-  color: #528508;
+.-invest__title span {
+  color:  #00308F;
 }
 
-.btn__farm--invest {
-  border: 1px solid #528508;
+.btn__--invest {
+  border: 1px solid  #00308F;
   color: #ffffff;
   display: inline-block;
   min-width: 25rem;
   margin-top: 4rem;
-  box-shadow: 1px 10px 30px -10px #528508;
+  box-shadow: 1px 10px 30px -10px  #00308F;
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -779,18 +779,18 @@ landing_container section {
   z-index: 1;
 }
 
-.btn__farm--invest:after {
+.btn__--invest:after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #528508;
+  background-color:  #00308F;
   z-index: -2;
 }
 
-.btn__farm--invest:before {
+.btn__--invest:before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -802,15 +802,15 @@ landing_container section {
   z-index: -1;
 }
 
-.btn__farm--invest:hover {
-  color: #528508;
+.btn__--invest:hover {
+  color:  #00308F;
 }
 
-.btn__farm--invest:hover:before {
+.btn__--invest:hover:before {
   width: 100%;
 }
 
-/*End Farm Invest*/
+/*End  Invest*/
 /*Footer*/
 .footer {
   position: relative;
@@ -853,12 +853,12 @@ landing_container section {
 }
 
 .footer_nav__link:hover {
-  color: #528508;
+  color:  #00308F;
 }
 
 .footer__contact {
   flex: 1 0 28rem;
-  background-color: #528508;
+  background-color:  #00308F;
   padding: 5rem 5rem 10rem;
   color: #ffffff;
   display: flex;
@@ -881,7 +881,7 @@ landing_container section {
 .btn__signin {
   margin-top: 1.5rem;
   border: 1px solid #ffffff;
-  color: #528508;
+  color:  #00308F;
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -911,7 +911,7 @@ landing_container section {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #528508;
+  background-color:  #00308F;
   transition: all .3s;
   z-index: -1;
 }
@@ -966,7 +966,7 @@ landing_container section {
     right: 0;
     width: 30rem;
     height: 100vh;
-    background-color: #528508;
+    background-color:  #00308F;
     z-index: 2;
     flex-direction: column;
     transform: translateX(40rem);
@@ -1064,7 +1064,7 @@ landing_container section {
   .invest__title,
   .works__title,
   .testimonials__title,
-  .farm-invest__title {
+  .-invest__title {
     font-size: 3rem;
   }
   .invest__description,
@@ -1146,11 +1146,11 @@ landing_container section {
     text-align: center;
   }
   /*End Testimonials*/
-  /*Farm Invest*/
-  .btn__farm--invest {
+  /* Invest*/
+  .btn__--invest {
     width: 80%;
     min-width: initial;
   }
-  /*End Farm Invest*/
+  /*End  Invest*/
 }
 /*# sourceMappingURL=main.css.map */

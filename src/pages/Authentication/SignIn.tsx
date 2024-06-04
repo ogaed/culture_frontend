@@ -14,41 +14,41 @@ const SignIn = () => {
   const handleLogin = async (e) => {
     e.preventDefault()
 
-    // Send a POST request to the server for user authentication
-    const response = await fetch(`${API_URL }/users/sign_in`, {
-      method: "POST",
-      headers: {"Content-Type": "application/json",},
+    // // Send a POST request to the server for user authentication
+    // const response = await fetch(`${API_URL }/users/sign_in`, {
+    //   method: "POST",
+    //   headers: {"Content-Type": "application/json",},
       
-      body: JSON.stringify({ user: { email, password } }),
-    });
+    //   body: JSON.stringify({ user: { email, password } }),
+    // });
 
-    if (response.ok) {
-      const authToken = response.headers.get("Authorization");
+    // if (response.ok) {
+    //   const authToken = response.headers.get("Authorization");
 
-      if (authToken) {
-        const user = await response.json();
+    //   if (authToken) {
+    //     const user = await response.json();
 
-        // Store the authentication token in local storage (AsyncStorage)
+    //     // Store the authentication token in local storage (AsyncStorage)
 
-        // await AsyncStorage.setItem("authToken", authToken);
-        const saveData = async () => {
-          try {
-            await localStorage.setItem("authToken", authToken);
-          } catch (error) {
-            console.error("Error saving data: ", error);
-          }
-        };
-        saveData();
+    //     // await AsyncStorage.setItem("authToken", authToken);
+    //     const saveData = async () => {
+    //       try {
+    //         await localStorage.setItem("authToken", authToken);
+    //       } catch (error) {
+    //         console.error("Error saving data: ", error);
+    //       }
+    //     };clear
+    //     saveData();
 
         navigate('/dashboard')
-        const userName = `${user.status.data.first_name} ${user.status.data.last_name}`;
-        alert(`Welcome, ${userName}`);
-      } else {
-        alert("Authentication token missing in response headers.");
-      }
-    } else {
-      alert("Wrong username or password");
-    }
+    //     const userName = `${user.status.data.first_name} ${user.status.data.last_name}`;
+    //     alert(`Welcome, ${userName}`);
+    //   } else {
+    //     alert("Authentication token missing in response headers.");
+    //   }
+    // } else {
+    //   alert("Wrong username or password");
+    // }
   
   };
   return (
@@ -58,9 +58,9 @@ const SignIn = () => {
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="py-17.5 px-26 text-center">
             <h2 className="mb-9 text-2xl text-center font-bold text-green dark:text-white sm:text-title-xl2">
-                Orchard Farm
+                TMS 
               </h2>
-                <img className="" src={Logo} alt="Logo" />
+                
 
               <p className="2xl:px-20">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -79,12 +79,12 @@ const SignIn = () => {
               <form>
                 <div className="mb-4">
                   <label className="mb-2.5 block font-medium text-black dark:text-white">
-                    Email
+                    User name
                   </label>
                   <div className="relative">
                     <input
-                      type="email"
-                      placeholder="Enter your email"
+                      type="text"
+                      placeholder="Enter your username"
                       value={email}
                       onChange={(e)=>setEmail(e.target.value)}
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
@@ -157,14 +157,14 @@ const SignIn = () => {
                     className="w-full cursor-pointer rounded-lg border border-green bg-green p-4 text-white transition hover:bg-opacity-90"
                   />
                 </div>
-                <div className="mt-6 text-center">
+                {/* <div className="mt-6 text-center">
                   <p>
                     Don’t have any account?{' '}
                     <Link to="/location" className="text-green">
                       Sign Up
                     </Link>
                   </p>
-                </div>
+                </div> */}
               </form>
             </div>
           </div>

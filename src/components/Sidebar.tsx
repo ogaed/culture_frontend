@@ -68,8 +68,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                to="/"
                className='group relative flex text-xl items-center gap-2.5 font-bold   py-2 px-4 text-white duration-300 ease-in-out'     
         >
-          <img width="50" src={Logo} alt="Logo" />
-          Orchard
+          {/* <img width="50" src={Logo} alt="Logo" /> */}
+               TMS
         </NavLink>
 
         <button
@@ -145,7 +145,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item product-List --> */}
               <li>
               <NavLink
-                        to="/product"
+                        to="/weight"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                             pathname.includes('product') &&
                           'bg-white2 white2:bg-meta-4'
@@ -165,15 +165,66 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 9.5625C2.87132 9.5625 3.375 9.05882 3.375 8.4375C3.375 7.81618 2.87132 7.3125 2.25 7.3125C1.62868 7.3125 1.125 7.81618 1.125 8.4375C1.125 9.05882 1.62868 9.5625 2.25 9.5625Z" fill=""/>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 14.0625C2.87132 14.0625 3.375 13.5588 3.375 12.9375C3.375 12.3162 2.87132 11.8125 2.25 11.8125C1.62868 11.8125 1.125 12.3162 1.125 12.9375C1.125 13.5588 1.62868 14.0625 2.25 14.0625Z" fill=""/>
                       </svg>
-                        Products
+                        Weights
+                      </NavLink>
+              </li>
+              <li>
+              <NavLink
+                        to="/cars"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
+                            pathname.includes('product') &&
+                          'bg-white2 white2:bg-meta-4'
+                        }`}
+                      >
+                       <svg 
+                       className='fill-current'
+                       width="18"  
+                       height="18" 
+                       viewBox="0 0 18 18" 
+                       fill="none" 
+                       xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 12.9375C5.625 12.6268 5.87684 12.375 6.1875 12.375H16.3125C16.6232 12.375 16.875 12.6268 16.875 12.9375C16.875 13.2482 16.6232 13.5 16.3125 13.5H6.1875C5.87684 13.5 5.625 13.2482 5.625 12.9375Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 8.4375C5.625 8.12684 5.87684 7.875 6.1875 7.875H16.3125C16.6232 7.875 16.875 8.12684 16.875 8.4375C16.875 8.74816 16.6232 9 16.3125 9H6.1875C5.87684 9 5.625 8.74816 5.625 8.4375Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 3.9375C5.625 3.62684 5.87684 3.375 6.1875 3.375H16.3125C16.6232 3.375 16.875 3.62684 16.875 3.9375C16.875 4.24816 16.6232 4.5 16.3125 4.5H6.1875C5.87684 4.5 5.625 4.24816 5.625 3.9375Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 5.0625C2.87132 5.0625 3.375 4.55882 3.375 3.9375C3.375 3.31618 2.87132 2.8125 2.25 2.8125C1.62868 2.8125 1.125 3.31618 1.125 3.9375C1.125 4.55882 1.62868 5.0625 2.25 5.0625Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 9.5625C2.87132 9.5625 3.375 9.05882 3.375 8.4375C3.375 7.81618 2.87132 7.3125 2.25 7.3125C1.62868 7.3125 1.125 7.81618 1.125 8.4375C1.125 9.05882 1.62868 9.5625 2.25 9.5625Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 14.0625C2.87132 14.0625 3.375 13.5588 3.375 12.9375C3.375 12.3162 2.87132 11.8125 2.25 11.8125C1.62868 11.8125 1.125 12.3162 1.125 12.9375C1.125 13.5588 1.62868 14.0625 2.25 14.0625Z" fill=""/>
+                      </svg>
+                        Cars
+                      </NavLink>
+              </li>
+              <li>
+              <NavLink
+                        to="/loaders"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
+                            pathname.includes('product') &&
+                          'bg-white2 white2:bg-meta-4'
+                        }`}
+                      >
+                       <svg 
+                       className='fill-current'
+                       width="18"  
+                       height="18" 
+                       viewBox="0 0 18 18" 
+                       fill="none" 
+                       xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 12.9375C5.625 12.6268 5.87684 12.375 6.1875 12.375H16.3125C16.6232 12.375 16.875 12.6268 16.875 12.9375C16.875 13.2482 16.6232 13.5 16.3125 13.5H6.1875C5.87684 13.5 5.625 13.2482 5.625 12.9375Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 8.4375C5.625 8.12684 5.87684 7.875 6.1875 7.875H16.3125C16.6232 7.875 16.875 8.12684 16.875 8.4375C16.875 8.74816 16.6232 9 16.3125 9H6.1875C5.87684 9 5.625 8.74816 5.625 8.4375Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.625 3.9375C5.625 3.62684 5.87684 3.375 6.1875 3.375H16.3125C16.6232 3.375 16.875 3.62684 16.875 3.9375C16.875 4.24816 16.6232 4.5 16.3125 4.5H6.1875C5.87684 4.5 5.625 4.24816 5.625 3.9375Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 5.0625C2.87132 5.0625 3.375 4.55882 3.375 3.9375C3.375 3.31618 2.87132 2.8125 2.25 2.8125C1.62868 2.8125 1.125 3.31618 1.125 3.9375C1.125 4.55882 1.62868 5.0625 2.25 5.0625Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 9.5625C2.87132 9.5625 3.375 9.05882 3.375 8.4375C3.375 7.81618 2.87132 7.3125 2.25 7.3125C1.62868 7.3125 1.125 7.81618 1.125 8.4375C1.125 9.05882 1.62868 9.5625 2.25 9.5625Z" fill=""/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 14.0625C2.87132 14.0625 3.375 13.5588 3.375 12.9375C3.375 12.3162 2.87132 11.8125 2.25 11.8125C1.62868 11.8125 1.125 12.3162 1.125 12.9375C1.125 13.5588 1.62868 14.0625 2.25 14.0625Z" fill=""/>
+                      </svg>
+                        Loaders
                       </NavLink>
               </li>
               {/* <!-- Menu Item product-List --> */}
+              
 
               {/* <!-- Menu Item add-product --> */}
                <li>
                       <NavLink
-                        to="/add-products"
+                        to="/add-weight"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
                             pathname.includes('add-product') &&
                           'bg-white2 white2:bg-meta-4'
@@ -188,13 +239,53 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                      xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.46803 0.250481C9.3637 0.0939944 9.18807 0 9 0C8.81193 0 8.6363 0.0939944 8.53197 0.250481L5.15697 5.31298C5.0419 5.48559 5.03117 5.70752 5.12906 5.89042C5.22694 6.07332 5.41755 6.1875 5.625 6.1875H5.73511L3.4605 9.82688C3.35213 10.0003 3.34639 10.2188 3.44551 10.3977C3.54464 10.5765 3.73302 10.6875 3.9375 10.6875H4.15236L2.30939 14.3734C2.2222 14.5478 2.23152 14.7549 2.33401 14.9207C2.4365 15.0866 2.61755 15.1875 2.8125 15.1875H7.875L7.875 18H10.125V15.1875H15.1875C15.3825 15.1875 15.5635 15.0866 15.666 14.9207C15.7685 14.7549 15.7778 14.5478 15.6906 14.3734L13.8476 10.6875H14.0625C14.267 10.6875 14.4554 10.5765 14.5545 10.3977C14.6536 10.2188 14.6479 10.0003 14.5395 9.82688L12.2649 6.1875H12.375C12.5824 6.1875 12.7731 6.07332 12.8709 5.89042C12.9688 5.70752 12.9581 5.48559 12.843 5.31298L9.46803 0.250481ZM7.24199 5.35232C7.14286 5.17347 6.95448 5.0625 6.75 5.0625H6.67604L9 1.57656L11.324 5.0625H11.25C11.0455 5.0625 10.8571 5.17347 10.758 5.35232C10.6589 5.53117 10.6646 5.74972 10.773 5.92312L13.0476 9.5625H12.9375C12.7426 9.5625 12.5615 9.66344 12.459 9.82928C12.3565 9.99511 12.3472 10.2022 12.4344 10.3766L14.2774 14.0625H3.72264L5.56562 10.3766C5.6528 10.2022 5.64348 9.99511 5.54099 9.82928C5.4385 9.66344 5.25745 9.5625 5.0625 9.5625H4.95239L7.227 5.92312C7.33538 5.74972 7.34111 5.53117 7.24199 5.35232Z" fill=""/>
                     </svg>
-                        Add Product
+                        Add Weight
+                      </NavLink>
+              </li>
+              <li>
+                      <NavLink
+                        to="/add-car"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
+                            pathname.includes('add-product') &&
+                          'bg-white2 white2:bg-meta-4'
+                        }`}
+                      >
+                     <svg 
+                     className='fill-current'
+                     width="18" 
+                     height="18" 
+                     viewBox="0 0 18 18" 
+                     fill="none" 
+                     xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.46803 0.250481C9.3637 0.0939944 9.18807 0 9 0C8.81193 0 8.6363 0.0939944 8.53197 0.250481L5.15697 5.31298C5.0419 5.48559 5.03117 5.70752 5.12906 5.89042C5.22694 6.07332 5.41755 6.1875 5.625 6.1875H5.73511L3.4605 9.82688C3.35213 10.0003 3.34639 10.2188 3.44551 10.3977C3.54464 10.5765 3.73302 10.6875 3.9375 10.6875H4.15236L2.30939 14.3734C2.2222 14.5478 2.23152 14.7549 2.33401 14.9207C2.4365 15.0866 2.61755 15.1875 2.8125 15.1875H7.875L7.875 18H10.125V15.1875H15.1875C15.3825 15.1875 15.5635 15.0866 15.666 14.9207C15.7685 14.7549 15.7778 14.5478 15.6906 14.3734L13.8476 10.6875H14.0625C14.267 10.6875 14.4554 10.5765 14.5545 10.3977C14.6536 10.2188 14.6479 10.0003 14.5395 9.82688L12.2649 6.1875H12.375C12.5824 6.1875 12.7731 6.07332 12.8709 5.89042C12.9688 5.70752 12.9581 5.48559 12.843 5.31298L9.46803 0.250481ZM7.24199 5.35232C7.14286 5.17347 6.95448 5.0625 6.75 5.0625H6.67604L9 1.57656L11.324 5.0625H11.25C11.0455 5.0625 10.8571 5.17347 10.758 5.35232C10.6589 5.53117 10.6646 5.74972 10.773 5.92312L13.0476 9.5625H12.9375C12.7426 9.5625 12.5615 9.66344 12.459 9.82928C12.3565 9.99511 12.3472 10.2022 12.4344 10.3766L14.2774 14.0625H3.72264L5.56562 10.3766C5.6528 10.2022 5.64348 9.99511 5.54099 9.82928C5.4385 9.66344 5.25745 9.5625 5.0625 9.5625H4.95239L7.227 5.92312C7.33538 5.74972 7.34111 5.53117 7.24199 5.35232Z" fill=""/>
+                    </svg>
+                        Add Car
+                      </NavLink>
+              </li>
+              <li>
+                      <NavLink
+                        to="/add-loader"
+                        className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
+                            pathname.includes('add-product') &&
+                          'bg-white2 white2:bg-meta-4'
+                        }`}
+                      >
+                     <svg 
+                     className='fill-current'
+                     width="18" 
+                     height="18" 
+                     viewBox="0 0 18 18" 
+                     fill="none" 
+                     xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9.46803 0.250481C9.3637 0.0939944 9.18807 0 9 0C8.81193 0 8.6363 0.0939944 8.53197 0.250481L5.15697 5.31298C5.0419 5.48559 5.03117 5.70752 5.12906 5.89042C5.22694 6.07332 5.41755 6.1875 5.625 6.1875H5.73511L3.4605 9.82688C3.35213 10.0003 3.34639 10.2188 3.44551 10.3977C3.54464 10.5765 3.73302 10.6875 3.9375 10.6875H4.15236L2.30939 14.3734C2.2222 14.5478 2.23152 14.7549 2.33401 14.9207C2.4365 15.0866 2.61755 15.1875 2.8125 15.1875H7.875L7.875 18H10.125V15.1875H15.1875C15.3825 15.1875 15.5635 15.0866 15.666 14.9207C15.7685 14.7549 15.7778 14.5478 15.6906 14.3734L13.8476 10.6875H14.0625C14.267 10.6875 14.4554 10.5765 14.5545 10.3977C14.6536 10.2188 14.6479 10.0003 14.5395 9.82688L12.2649 6.1875H12.375C12.5824 6.1875 12.7731 6.07332 12.8709 5.89042C12.9688 5.70752 12.9581 5.48559 12.843 5.31298L9.46803 0.250481ZM7.24199 5.35232C7.14286 5.17347 6.95448 5.0625 6.75 5.0625H6.67604L9 1.57656L11.324 5.0625H11.25C11.0455 5.0625 10.8571 5.17347 10.758 5.35232C10.6589 5.53117 10.6646 5.74972 10.773 5.92312L13.0476 9.5625H12.9375C12.7426 9.5625 12.5615 9.66344 12.459 9.82928C12.3565 9.99511 12.3472 10.2022 12.4344 10.3766L14.2774 14.0625H3.72264L5.56562 10.3766C5.6528 10.2022 5.64348 9.99511 5.54099 9.82928C5.4385 9.66344 5.25745 9.5625 5.0625 9.5625H4.95239L7.227 5.92312C7.33538 5.74972 7.34111 5.53117 7.24199 5.35232Z" fill=""/>
+                    </svg>
+                        Add Loader
                       </NavLink>
               </li>
               {/* <!-- Menu Item add-product --> */}
 
               {/* <!-- Menu Item users --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/users"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
@@ -214,11 +305,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </svg>
                   Users
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item users --> */}
 
               {/* <!-- Menu Item Profile --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/profile"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4  text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
@@ -240,11 +331,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </svg>
                   Profile
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item Profile --> */}
 
                {/* <!-- Menu Item edit-profile --> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/edit-profile"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
@@ -265,11 +356,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </svg>
                  Edit Profile
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item edit-profile --> */}
             
               {/* <!-- Menu Item Orders--> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/orders"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
@@ -288,11 +379,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </svg>
                  Orders
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item Orders--> */}
 
               {/* <!-- Menu Item Payments--> */}
-              <li>
+              {/* <li>
                 <NavLink
                   to="/payments"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 text-white duration-300 ease-in-out hover:bg-white2 white2:hover:bg-meta-4 ${
@@ -314,7 +405,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               </svg>
                 Payments
                 </NavLink>
-              </li>
+              </li> */}
               {/* <!-- Menu Item Payments--> */}
 
               {/* <!-- Menu Item Calendar --> */}

@@ -1,10 +1,10 @@
 import Breadcrumb from '../components/Breadcrumb';
-import TableOne from '../components/ProductTable';
+import TableOne from '../components/LoadersTable';
 
-const Product = ()=>{
+const Loaders = ()=>{
    return(
      <div className="mx-auto max-w-270">
-     <Breadcrumb pageName='Product'/>
+     <Breadcrumb pageName='Weights'/>
 
      <div className="flex flex-col gap-10">
          <TableOne />
@@ -14,4 +14,4 @@ const Product = ()=>{
    )  
 }
 
-export default Product
+export default Loaders

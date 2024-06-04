@@ -13,7 +13,7 @@ const SelectUserType = ()=>{
       e.preventDefault
         let role = {type: type}
         if(!role.type){
-            setErrorMsg("Please Select Either Client Or Farmer")
+            setErrorMsg("Please Select Either Client Or er")
         }else{
           navigate(`/auth/signup/${role.type}`)
         }
@@ -40,7 +40,7 @@ return(
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-green focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-green"
                     > 
                     <option>Select_Role</option>
-                    <option>Farmer</option>
+                    <option>er</option>
                     <option>Client</option>
                     </select>
                   </div>

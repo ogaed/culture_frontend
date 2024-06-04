@@ -1,9 +1,13 @@
 import { lazy } from 'react';
 const Calendar = lazy(() => import('../pages/Calendar'));
-const AddProducts = lazy(() => import('../pages/AddProduct'));
+const AddWeight = lazy(() => import('../pages/AddWeight'));
+const AddCar = lazy(() => import('../pages/AddCar'));
+const AddLoader = lazy(() => import('../pages/AddLoader'));
 const Profile = lazy(() => import('../pages/Profile'));
 const Tables = lazy(() => import('../pages/users'));
-const Product = lazy(() => import('../pages/Products'));
+const Weights = lazy(() => import('../pages/Weights'));
+const Cars = lazy(() => import('../pages/Cars'));
+const Loaders = lazy(() => import('../pages/Loaders'));
 const Orders = lazy(() => import('../pages/Orders'));
 const Payments = lazy(() => import('../pages/Payments'));
 const EditProfile = lazy(()=> import('../pages/EditProfile'))
@@ -43,17 +47,36 @@ const coreRoutes = [
   },
 
   {
-    path: '/product',
-    title: 'Product',
-    component: Product,
+    path: '/weight',
+    title: 'Weights',
+    component: Weights,
+  },
+  {
+    path: '/cars',
+    title: 'Cars',
+    component: Cars,
+  },
+  {
+    path: '/loaders',
+    title: 'Loaders',
+    component: Loaders,
   },
 
   {
-    path: 'add-products',
-    title: 'Add Product',
-    component: AddProducts,
+    path: 'add-weight',
+    title: 'Add Weight',
+    component: AddWeight,
   },
-
+  {
+    path: 'add-car',
+    title: 'Add Car',
+    component: AddCar,
+  },
+  {
+    path: 'add-loader',
+    title: 'Add Loader',
+    component: AddLoader,
+  },
   {
     path: '/users',
     title: 'Users',
